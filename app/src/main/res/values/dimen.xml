@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Margin (Spacing) !-->
+    <dimen name="smallMargin">@dimen/_4sdp</dimen>
+    <dimen name="defaultMargin">@dimen/_8sdp</dimen>
+    <dimen name="largeMargin">@dimen/_16sdp</dimen>
+    <dimen name="hugeMargin">@dimen/_24sdp</dimen>
+    <!-- Text Size !-->
+    <dimen name="defaultText">@dimen/_16ssp</dimen>
+    <dimen name="headlineText">@dimen/_24ssp</dimen>
+</resources>

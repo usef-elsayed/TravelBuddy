@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity">
+
+        <!-- Top Row: App Name and Model Selection Button -->
+        <TextView
+            android:id="@+id/appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="@dimen/headlineText"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/defaultMargin"
+            android:layout_marginTop="@dimen/smallMargin" />
+        <ImageButton
+            android:id="@+id/modelSelectionButton"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="Image button to select from supported servers"
+            android:src="@drawable/icon_api"
+            android:background="@null"
+            app:tint="@color/textColor"
+            app:layout_constraintTop_toTopOf="@id/appName"
+            app:layout_constraintBottom_toBottomOf="@id/appName"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/defaultMargin" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ogLangDropDownLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="From"
+            app:strokeColor="@color/primaryColor"
+            app:layout_constraintTop_toBottomOf="@id/appName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/translatedLangDropDownLayout"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            android:layout_marginStart="@dimen/defaultMargin"
+            android:layout_marginTop="@dimen/smallMargin"
+            android:layout_marginEnd="@dimen/smallMargin">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/ogLangDropDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:clickable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/translatedLangDropDownLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="To"
+            app:strokeColor="@color/primaryColor"
+            app:layout_constraintTop_toBottomOf="@id/appName"
+            app:layout_constraintStart_toEndOf="@id/ogLangDropDownLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/defaultMargin"
+            android:layout_marginTop="@dimen/smallMargin"
+            android:layout_marginStart="@dimen/smallMargin">
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/translatedLangDropDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:clickable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ogTextLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/layout_bg"
+            app:layout_constraintTop_toBottomOf="@id/ogLangDropDownLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/translatedTextLayout"
+            app:layout_constraintBottom_toTopOf="@id/speakButton"
+            android:layout_margin="@dimen/defaultMargin">
+            <TextView
+                android:id="@+id/ogTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spoken text will be here"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/defaultMargin" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/translatedTextLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/layout_bg"
+            app:layout_constraintTop_toBottomOf="@id/translatedLangDropDownLayout"
+            app:layout_constraintStart_toEndOf="@id/ogTextLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/recordButton"
+            android:layout_margin="@dimen/defaultMargin">
+            <TextView
+                android:id="@+id/translatedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Translated text will be here"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/defaultMargin" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/recordButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Listen"
+            android:enabled="false"
+            android:layout_margin="@dimen/defaultMargin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/speakButton" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/speakButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Speak"
+            android:enabled="false"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_margin="@dimen/defaultMargin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recordButton"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

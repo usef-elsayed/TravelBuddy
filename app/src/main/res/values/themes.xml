@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TravelBuddy" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorOnPrimary">@color/onPrimaryColor</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <item name="colorPrimaryContainer">@color/onBackgroundColor</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
+        <!-- textColorPrimary - for Large texts !-->
+        <item name="android:textColorPrimary">@color/textColor</item>
+        <!-- textColorSecondary - for Medium texts !-->
+        <item name="android:textColorSecondary">@color/textColor</item>
+        <!-- textColorTertiary - for Small texts !-->
+        <item name="android:textColorTertiary">@color/textColor</item>
+    </style>
+
+    <style name="Theme.TravelBuddy" parent="Base.Theme.TravelBuddy" />
+    <style name="MyButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/defaultCorners</item>
+    </style>
+    <style name="defaultCorners">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15%</item>
+    </style>
+</resources>

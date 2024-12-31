@@ -4,6 +4,12 @@
 
 A Native Android application leveraging AI, Text-to-Speech (TTS), and Speech-to-Text (STT) technologies to translate spoken text into multiple languages.
 
+# Preview
+
+Light Mode             |  Dark Mode
+:-------------------------:|:-------------------------:
+![app main screen in light mode](travelBuddy-light.png)  |  ![app main screen in dark mode](travelBuddy-Dark.png)
+
 ## Technolgy used:
 
 - Kotlin
